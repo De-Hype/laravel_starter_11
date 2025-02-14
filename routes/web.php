@@ -1,15 +1,8 @@
 <?php
 
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/about/{id}', function ($id) {
-    return $id;
-});
-
-Route::get('/info', function(){
-    return 'Hello';
-});
+Route::apiResource('todo', TodoController::class);
