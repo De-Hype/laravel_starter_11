@@ -13,6 +13,7 @@ class Todo extends Model
     protected $fillable = [
         'title',
         'description',
+
         'completed'
     ];
 
@@ -21,4 +22,4 @@ class Todo extends Model
     ];
 }
 
-namespace App\Models;
+
