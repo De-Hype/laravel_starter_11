@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
+use App\Http\Controllers\Controller;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -9,10 +10,9 @@ use App\Http\Requests\TodoRequest;
 
 class TodoController extends Controller
 {
-    public function index(): JsonResponse
+    public function index()
     {
-        $todos = Todo::latest()->get();
-        return response()->json($todos);
+       return Todo::all();
     }
 
     public function store(TodoRequest $request): JsonResponse
